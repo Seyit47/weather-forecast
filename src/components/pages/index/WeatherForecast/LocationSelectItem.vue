@@ -21,7 +21,7 @@
         </div>
         <div class="ml-auto flex flex-col items-end gap-y-1.5">
             <div class="h-4 w-4">
-                <img :src="`/static/images/country-flags/${item?.country_code}.svg`" alt="" />
+                <img :src="iconSrc" alt="" />
             </div>
             <span>
                 {{ item?.country }}
@@ -58,6 +58,14 @@ const props = withDefaults(
         updateModelValue: () => {},
     }
 );
+
+const { $config } = useNuxtApp();
+
+const iconSrc = computed(() => {
+    return process.env.NODE_ENV === "production"
+        ? `${$config.public.IMAGES_SERVER_ORIGIN}/images/country-flags/${props.item?.country_code}.svg`
+        : `/static/images/country-flags/${props.item?.country_code}.svg`;
+});
 
 const localModelValue = computed({
     get() {

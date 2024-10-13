@@ -68,9 +68,16 @@ export default defineNuxtConfig({
         },
     },
 
+    experimental: {
+        payloadExtraction: false,
+    },
+
     runtimeConfig: {
         public: {
             API_TOKEN: process.env.API_TOKEN,
+            FORECAST_SERVER_ORIGIN: process.env.FORECAST_SERVER_ORIGIN,
+            GEOCODING_SERVER_ORIGIN: process.env.GEOCODING_SERVER_ORIGIN,
+            IMAGES_SERVER_ORIGIN: process.env.IMAGES_SERVER_ORIGIN,
         },
     },
 

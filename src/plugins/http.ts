@@ -8,7 +8,6 @@ export class HttpApiService {
     } = {};
 
     private headers: Record<string, string> = {};
-    private apiToken: string;
     fetch: ReturnType<typeof $fetch.create>;
 
     // eslint-disable-next-line no-use-before-define
@@ -18,12 +17,21 @@ export class HttpApiService {
 
     constructor(nuxtApp: NuxtApp) {
         this.nuxtApp = nuxtApp;
-        this.api = getUrlPrefixedApi(this, "/api/");
-        this.geoApi = getUrlPrefixedApi(this, "/geo-api/");
+        this.api = getUrlPrefixedApi(
+            this,
+            process.env.NODE_ENV === "production"
+                ? `${nuxtApp.$config.public.FORECAST_SERVER_ORIGIN}/`
+                : "/api/"
+        );
+        this.geoApi = getUrlPrefixedApi(
+            this,
+            process.env.NODE_ENV === "production"
+                ? `${nuxtApp.$config.public.GEOCODING_SERVER_ORIGIN}/`
+                : "/geo-api/"
+        );
         this.fetch = $fetch.create({
             baseURL: "/",
         });
-        this.apiToken = nuxtApp.$config.public.API_TOKEN;
     }
 
     async get<RT>(
