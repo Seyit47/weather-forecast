@@ -1,0 +1,11 @@
+<template>
+    <label class="flex select-none items-center justify-center bg-white px-2 py-1.5">
+        <span> Item not found </span>
+    </label>
+</template>
+
+<script lang="ts" setup>
+defineOptions({
+    name: "CommonSelectItemEmpty",
+});
+</script>

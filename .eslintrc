@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "@nuxtjs/eslint-config-typescript",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier"],
+  "rules": {
+    "no-console": [1, { "allow": ["warn", "error"] }],
+    "dot-notation": "off",
+    "vue/no-multiple-template-root": "off"
+  }
+}

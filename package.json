@@ -1,0 +1,38 @@
+{
+    "name": "nuxt-app",
+    "private": true,
+    "type": "module",
+    "engines": {
+        "node": ">=20.0.0 "
+    },
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare",
+        "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+        "format": "prettier --write src/"
+    },
+    "dependencies": {
+        "@vueuse/core": "^11.1.0",
+        "date-fns": "^2.30.0",
+        "nuxt": "^3.13.0",
+        "vue": "latest",
+        "vue-router": "latest",
+        "vue3-toastify": "^0.2.3"
+    },
+    "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72",
+    "devDependencies": {
+        "@nuxtjs/eslint-config-typescript": "^12.1.0",
+        "@nuxtjs/eslint-module": "^4.1.0",
+        "@nuxtjs/tailwindcss": "^6.12.1",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.2.1",
+        "prettier": "^3.3.3",
+        "prettier-plugin-tailwindcss": "^0.6.6",
+        "sass": "^1.78.0",
+        "typescript": "~5.3.3"
+    }
+}
